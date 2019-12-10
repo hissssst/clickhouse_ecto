@@ -17,7 +17,7 @@ defmodule ClickhouseEctoTest do
   end
 
   defp normalize(query, operation \\ :all, counter \\ 0) do
-    {query, _params, _key} = Ecto.Query.Planner.plan(query, operation, ClickhouseEcto, counter)
+    {query, _params, _key} = Ecto.Query.Planner.plan(query, operation, ClickhouseEcto)
     {query, _} = Ecto.Query.Planner.normalize(query, operation, ClickhouseEcto, counter)
     query
   end
